@@ -119,7 +119,7 @@ systemd.exists('NetworkManager.service')
 	manager.isSetup()
 	.then (setup) ->
 		if setup
-			retry = false
+			retry = true # allow reconnect even when previous connection was configured
 .then ->
 	manager.ready()
 .then(run)
